@@ -1,1 +1,7 @@
 @import url(./styles/main.css);
+
+button {
+    border-color: navy;
+    border-style: none;
+
+}
