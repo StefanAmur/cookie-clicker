@@ -2,19 +2,57 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cookie clicker</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./styles.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Money clicker</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-
     <h1>The easiest way to have some money</h1>
 
-    <button class="button"><img src="/img/5euro.jpeg" class="euro" alt="button 5euro" ><em>GET ME!</em></button>
+    <section class="main">
+        <section class="left">
+            <h2 class="left-title">Total</h1>
+                <p class="text text-left" id="total-money">2000</p>
+        </section>
+        <section class="middle">
+            <button class="button" id="increase">
+                <img src="/img/5euro.jpeg" class="euro" alt="button 5euro" />
+                <em>GET ME!</em>
+            </button>
+        </section>
+        <section class="right">
+            <div class="extras">
+                <p class="explain">some quick explaining goes here</p>
+                <button class="button-extra" id="multiply">Multiply by 5
+                    <span class="cost" id="multiplier-cost">200</span>
+                </button>
+
+            </div>
+            <div class="extras">
+                <p class="explain">some quick explaining goes here</p>
+                <button class="button-extra" id="autoclick">Auto Click
+                    <span class="cost" id="autoclick-cost">1000</span>
+                </button>
+            </div>
+            <div class="extras">
+                <p class="explain">some quick explaining goes here</p>
+                <button class="button-extra" id="bonus">Bonus
+                    <span class="cost" id="bonus-cost">3000</span>
+                </button>
+            </div>
+        </section>
+    </section>
+
+
+    <!-- old increase button starts here -->
+    <!-- <button class="button">
+        <img src="/img/5euro.jpeg" class="euro" alt="button 5euro" /><em>GET ME!</em>
+    </button> -->
+    <!-- old increase button ends here -->
 
     <script src="./script/script.js" async defer></script>
 </body>
