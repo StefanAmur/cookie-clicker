@@ -1,3 +1,4 @@
+
 let counter = parseInt(document.getElementById('total-money').textContent);
 
 // increase total amount by 1 for each click
