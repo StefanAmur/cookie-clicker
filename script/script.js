@@ -75,6 +75,10 @@ bonusBtn.addEventListener('click', () => {
     }
 })
 
+document.getElementById("reset").addEventListener("click",  () => {
+    location.reload();
+})
+
 // this function gets called when user clicks on bonus button
 // function doubleMultiplier() {
 //     multiplier = multiplier * 2;
