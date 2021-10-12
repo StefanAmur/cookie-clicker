@@ -47,54 +47,95 @@ function autoClick() {
 
 
 // bonus part starts here - still work in progress
-// atm it does not work correctly
+// atm it sorta works... works-ish...
 let bonusPrice = document.getElementById('bonus-cost').textContent;
 let bonusBtn = document.getElementById('bonus');
 bonusBtn.addEventListener('click', () => {
     if (counter > bonusPrice) {
         counter = counter - bonusPrice;
-        console.log(counter);
-        doubleMultiplier();
-        console.log(`The multiplier now is: ${multiplier}`);
-        setTimeout(() => {
-            normalMultiplier()
-        }, 20000);
+        document.getElementById('total-money').textContent = counter;
+        multiplier = multiplier * 2;
+
+        let timeleft = 10;
+
+        let downloadTimer = setInterval(function function1() {
+            document.getElementById("timer").textContent = `${timeleft} sec`;
+            bonusBtn.setAttribute('disabled', 'true');
+            timeleft -= 1;
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                multiplier = multiplier / 2;
+                bonusBtn.removeAttribute('disabled');
+                document.getElementById("timer").textContent = '10 sec';
+            }
+        }, 1000);
     } else {
         console.log('you need more money');
     }
-
 })
 
-
 // this function gets called when user clicks on bonus button
-function doubleMultiplier() {
-    multiplier = multiplier * 2;
-    bonusBtn.setAttribute('disabled', 'true');
-    let fiveMinutes = 60 * 1,
-        display = document.getElementById('bonus-cost');
-    startTimer(fiveMinutes, display);
+// function doubleMultiplier() {
+//     multiplier = multiplier * 2;
+//     bonusBtn.setAttribute('disabled', 'true');
+// }
 
-}
+// function normalMultiplier() {
+//     multiplier = multiplier / 2;
+//     bonusBtn.removeAttribute('disabled');
+// }
 
-function normalMultiplier() {
-    multiplier = multiplier / 2;
-    bonusBtn.removeAttribute('disabled');
-}
 
-// 5 minutes timer
-function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+// // bonus part starts here - still work in progress
+// // atm it does not work correctly
+// let bonusPrice = document.getElementById('bonus-cost').textContent;
+// let bonusBtn = document.getElementById('bonus');
+// bonusBtn.addEventListener('click', () => {
+//     if (counter > bonusPrice) {
+//         counter = counter - bonusPrice;
+//         console.log(counter);
+//         doubleMultiplier();
+//         console.log(`The multiplier now is: ${multiplier}`);
+//         setTimeout(() => {
+//             normalMultiplier()
+//         }, 20000);
+//     } else {
+//         console.log('you need more money');
+//     }
 
-        display.textContent = minutes + ":" + seconds;
+// })
 
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-}
+
+// // this function gets called when user clicks on bonus button
+// function doubleMultiplier() {
+//     multiplier = multiplier * 2;
+//     bonusBtn.setAttribute('disabled', 'true');
+//     let fiveMinutes = 60 * 1,
+//         display = document.getElementById('bonus-cost');
+//     startTimer(fiveMinutes, display);
+
+// }
+
+// function normalMultiplier() {
+//     multiplier = multiplier / 2;
+//     bonusBtn.removeAttribute('disabled');
+// }
+
+// // 5 minutes timer
+// function startTimer(duration, display) {
+//     let timer = duration, minutes, seconds;
+//     setInterval(function () {
+//         minutes = parseInt(timer / 60, 10);
+//         seconds = parseInt(timer % 60, 10);
+
+//         minutes = minutes < 10 ? "0" + minutes : minutes;
+//         seconds = seconds < 10 ? "0" + seconds : seconds;
+
+//         display.textContent = minutes + ":" + seconds;
+
+//         if (--timer < 0) {
+//             timer = duration;
+//         }
+//     }, 1000);
+// }
