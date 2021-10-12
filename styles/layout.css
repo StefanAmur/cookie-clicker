@@ -56,6 +56,11 @@
   box-shadow: 5px 10px 10px darkslategray;
 }
 
+.button-extra:active {
+  transform: scale(1);
+  box-shadow: none;
+}
+
 .explain {
   color: var(--clr-text);
 }
