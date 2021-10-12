@@ -23,7 +23,7 @@
 }
 
 .text-left {
-  color: var(--clr-text);
+  color: darkgreen;
   font-size: 60px;
 }
 
@@ -44,6 +44,16 @@
   background-color: lightgreen;
   border: 2px solid lightgreen;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button-extra:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 10px darkslategray;
 }
 
 .explain {
