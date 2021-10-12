@@ -73,6 +73,10 @@ html {
   text-shadow: 2px 2px 5px darkred;
 }
 
+.bigRedButton {
+  align-self: center;
+}
+
 .button-extra {
   font-size: 16px;
   color: #fff;
@@ -140,4 +144,3 @@ img {
   position: relative;
   width: 30px;
 }
-
