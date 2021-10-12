@@ -12,7 +12,7 @@ increase.addEventListener('click', () => {
 let multiplier = 1;
 let multiplierPrice = document.getElementById('multiplier-cost').textContent;
 document.getElementById('multiply').addEventListener('click', () => {
-    if (counter > multiplierPrice) {
+    if (counter >= multiplierPrice) {
         // multiplier = 5;
         multiplier = multiplier * 2;
         counter = counter - multiplierPrice;
@@ -28,7 +28,7 @@ document.getElementById('multiply').addEventListener('click', () => {
 // autoclicker, price doubles each time it's bought
 let autoclickerPrice = document.getElementById('autoclick-cost').textContent;
 document.getElementById('autoclick').addEventListener('click', () => {
-    if (counter > autoclickerPrice) {
+    if (counter >= autoclickerPrice) {
         counter = counter - autoclickerPrice;
         autoclickerPrice = autoclickerPrice * 2;
         document.getElementById('autoclick-cost').textContent = autoclickerPrice;
@@ -52,7 +52,7 @@ function autoClick() {
 let bonusPrice = document.getElementById('bonus-cost').textContent;
 let bonusBtn = document.getElementById('bonus');
 bonusBtn.addEventListener('click', () => {
-    if (counter > bonusPrice) {
+    if (counter >= bonusPrice) {
         counter = counter - bonusPrice;
         document.getElementById('total-money').textContent = counter;
         multiplier = multiplier * 2;
@@ -60,14 +60,14 @@ bonusBtn.addEventListener('click', () => {
         let timeleft = 10;
 
         let downloadTimer = setInterval(function function1() {
-            document.getElementById("timer").textContent = `${timeleft} sec`;
+            document.getElementById("timer").textContent = `Bonus ${timeleft} sec`;
             bonusBtn.setAttribute('disabled', 'true');
             timeleft -= 1;
             if (timeleft <= 0) {
                 clearInterval(downloadTimer);
                 multiplier = multiplier / 2;
                 bonusBtn.removeAttribute('disabled');
-                document.getElementById("timer").textContent = '10 sec';
+                document.getElementById("timer").textContent = 'Bonus 10 sec';
             }
         }, 1000);
     } else {
